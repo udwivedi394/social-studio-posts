@@ -150,6 +150,7 @@ class PostExtractor:
                           'totalCount': 0
                       }}
         while pagination:
+            print('Making API call at {}: {}'.format(datetime.now(), params))
             header = self._get_header()
             response = request_maker.get_request(self.url, params=params, header=header)
             resp_data = response.json()
