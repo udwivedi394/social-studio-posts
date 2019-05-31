@@ -164,7 +164,8 @@ class PostExtractor:
                 pagination = False
             else:
                 last_id = resp_data['data'][-1]['id']
-                next_params = {'beforeId': last_id}
+                # next_params = {'beforeId': last_id}
+                next_params = {'sinceId': last_id}
                 params = {**params, **next_params}
             self._write_state(params)
             print('With content: {}, without content: {} at {}'.format(total_count_with_content,
